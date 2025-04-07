@@ -11,14 +11,11 @@ export default function SmartQA({ orders, items }) {
     setAnswer(null);
 
     try {
-      const res = await fetch(
-        "https://analytics-rouge.vercel.app//api/ask-ai",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ question, orders, items }),
-        }
-      );
+      const res = await fetch("https://jillian.vercel.app//api/ask-ai", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question, orders, items }),
+      });
 
       const data = await res.json();
       if (data.answer) {
