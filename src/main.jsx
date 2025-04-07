@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
-      <h1>📊 VTEX Sales Dashboard</h1>
+      <h1>📊 Sales Dashboard</h1>
       <p>Upload your <code>orders.csv</code> file:</p>
       <input type="file" accept=".csv" onChange={handleFileUpload} />
       <br /><br />
