@@ -59,7 +59,7 @@ export default function App() {
 
   return (
     <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
-      <h1>📊 Sales Dashboard</h1>
+      <h1>📊 Analytics Dashboard</h1>
 
       <KPICards orders={ordersData} />
 
