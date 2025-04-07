@@ -1,41 +1,83 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import Papa from "papaparse";
-import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+} from "recharts";
 
 function App() {
-  const [data, setData] = useState([]);
+  const [ordersData, setOrdersData] = useState([]);
+  const [itemsData, setItemsData] = useState([]);
 
-  const handleFileUpload = (e) => {
+  const handleOrdersUpload = (e) => {
     const file = e.target.files[0];
     Papa.parse(file, {
       header: true,
+      skipEmptyLines: true,
       complete: (results) => {
-        const chartData = results.data
-          .filter(row => row.createdAt && row.totalValue)
-          .map(row => ({
-            date: row.createdAt,
-            revenue: parseFloat(row.totalValue)
-          }));
-        setData(chartData);
-      }
+        const parsed = results.data.filter(
+          (row) => row.createdAt && row.totalValue
+        );
+        setOrdersData(parsed);
+        console.log("✅ Orders loaded", parsed);
+      },
     });
   };
 
+  const handleItemsUpload = (e) => {
+    const file = e.target.files[0];
+    Papa.parse(file, {
+      header: true,
+      skipEmptyLines: true,
+      complete: (results) => {
+        const parsed = results.data.filter(
+          (row) => row.sku && row.productName
+        );
+        setItemsData(parsed);
+        console.log("✅ Items loaded", parsed);
+      },
+    });
+  };
+
+  const revenueData = ordersData.map((row) => ({
+    date: row.createdAt,
+    revenue: parseFloat(row.totalValue),
+  }));
+
   return (
     <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
-      <h1>📊 Sales Dashboard</h1>
+      <h1>📊 VTEX Sales Dashboard</h1>
+
       <p>Upload your <code>orders.csv</code> file:</p>
-      <input type="file" accept=".csv" onChange={handleFileUpload} />
+      <input type="file" accept=".csv" onChange={handleOrdersUpload} />
+
+      <p style={{ marginTop: "1rem" }}>
+        Upload your <code>items.csv</code> file:
+      </p>
+      <input type="file" accept=".csv" onChange={handleItemsUpload} />
+
       <br /><br />
-      {data.length > 0 && (
-        <LineChart width={600} height={300} data={data}>
-          <CartesianGrid stroke="#ccc" />
-          <XAxis dataKey="date" />
-          <YAxis />
-          <Tooltip />
-          <Line type="monotone" dataKey="revenue" stroke="#8884d8" />
-        </LineChart>
+      {revenueData.length > 0 && (
+        <>
+          <h2>💰 Revenue Over Time</h2>
+          <LineChart width={600} height={300} data={revenueData}>
+            <CartesianGrid stroke="#ccc" />
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip />
+            <Line
+              type="monotone"
+              dataKey="revenue"
+              stroke="#8884d8"
+              strokeWidth={2}
+            />
+          </LineChart>
+        </>
       )}
     </div>
   );
