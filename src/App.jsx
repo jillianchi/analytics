@@ -14,6 +14,7 @@ import RevenueChart from "./components/RevenueChart";
 import TopProductsChart from "./components/TopProductsChart";
 import KPICards from "./components/KPICards";
 import AIHighlights from "./components/AIHighlights";
+import SmartQA from "./components/SmartQA";
 
 export default function App() {
   const [ordersData, setOrdersData] = useState([]);
@@ -63,6 +64,8 @@ export default function App() {
       <KPICards orders={ordersData} />
 
       <AIHighlights orders={ordersData} items={itemsData} />
+
+      <SmartQA orders={ordersData} items={itemsData} />
 
       <FileUploader
         onOrdersParsed={(data) => {
