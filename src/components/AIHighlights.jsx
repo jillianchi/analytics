@@ -12,9 +12,11 @@ export default function AIHighlights({ orders, items }) {
   }, [orders, items]);
 
   return (
-    <div style={{ marginTop: "2rem" }}>
-      <h2>🧠 AI Highlights</h2>
-      <ul style={{ lineHeight: 1.8 }}>
+    <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-sm animate-fade-in">
+      <h2 className="text-lg font-semibold text-blue-600 mb-4 flex items-center">
+        🤖 AI Highlights
+      </h2>
+      <ul className="space-y-3 text-sm text-gray-700 list-disc list-inside">
         {insights.map((insight, idx) => (
           <li key={idx}>{insight}</li>
         ))}
@@ -24,7 +26,6 @@ export default function AIHighlights({ orders, items }) {
 }
 
 function generateAIInsights(orders, items) {
-  // This function simulates AI-generated output — later you'll replace this with GPT API
   const totalRevenue = orders.reduce((sum, o) => sum + o.totalValue, 0);
   const totalOrders = orders.length;
   const avgOrderValue = totalRevenue / totalOrders;

@@ -11,28 +11,25 @@ export default function KPICards({ orders }) {
     num.toLocaleString("en-US", { style: "currency", currency: "USD" });
 
   return (
-    <div style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
-      <div style={cardStyle}>
-        <h3>💰 Total Revenue</h3>
-        <p>{format(totalRevenue)}</p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fade-in">
+      <div className="bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-2xl shadow-md text-center">
+        <h3 className="text-sm text-gray-500 uppercase">💰 Total Revenue</h3>
+        <p className="text-2xl font-bold text-gray-800 mt-1">
+          {format(totalRevenue)}
+        </p>
       </div>
-      <div style={cardStyle}>
-        <h3>📦 Total Orders</h3>
-        <p>{totalOrders}</p>
+
+      <div className="bg-gradient-to-br from-green-100 to-green-50 p-6 rounded-2xl shadow-md text-center">
+        <h3 className="text-sm text-gray-500 uppercase">📦 Total Orders</h3>
+        <p className="text-2xl font-bold text-gray-800 mt-1">{totalOrders}</p>
       </div>
-      <div style={cardStyle}>
-        <h3>📊 Avg. Order Value</h3>
-        <p>{format(avgOrderValue)}</p>
+
+      <div className="bg-gradient-to-br from-purple-100 to-purple-50 p-6 rounded-2xl shadow-md text-center">
+        <h3 className="text-sm text-gray-500 uppercase">📊 Avg. Order Value</h3>
+        <p className="text-2xl font-bold text-gray-800 mt-1">
+          {format(avgOrderValue)}
+        </p>
       </div>
     </div>
   );
 }
-
-const cardStyle = {
-  background: "#f4f4f4",
-  padding: "1rem 2rem",
-  borderRadius: "12px",
-  boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-  flex: "1",
-  textAlign: "center",
-};
