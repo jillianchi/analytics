@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "vercel-build": "echo skipping build"
+    "vercel-build": "vite build"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.0.0",
