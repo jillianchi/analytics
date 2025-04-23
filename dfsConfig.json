@@ -1,0 +1,22 @@
+[
+  {
+    "keywords": ["wine"],
+    "location_code": 2554,
+    "category_code": 405,
+    "language_code": "en",
+    "time_range": "past_90_days",
+    "region_label": "NZ",
+    "category_label": "wine",
+    "use_live": true
+  },
+  {
+    "keywords": ["fashion"],
+    "location_code": 2341,
+    "category_code": 18,
+    "language_code": "en",
+    "time_range": "past_90_days",
+    "region_label": "OM",
+    "category_label": "fashion",
+    "use_live": false
+  }
+]

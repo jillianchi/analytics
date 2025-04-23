@@ -1,0 +1,348 @@
+{
+  "id": "04171140-9751-0173-0000-984b20d0fe62",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "6.2785 sec.",
+  "cost": 0.009,
+  "result_count": 1,
+  "path": [
+    "v3",
+    "keywords_data",
+    "google_trends",
+    "explore",
+    "live"
+  ],
+  "data": {
+    "api": "keywords_data",
+    "function": "explore",
+    "se": "google_trends",
+    "keywords": [
+      "wine"
+    ],
+    "location_code": 2554,
+    "language_code": "en",
+    "time_range": "past_90_days",
+    "category_code": 405,
+    "item_types": [
+      "google_trends_topics_list",
+      "google_trends_queries_list"
+    ]
+  },
+  "result": [
+    {
+      "keywords": [
+        "wine"
+      ],
+      "type": "trends",
+      "location_code": 2554,
+      "language_code": "en",
+      "check_url": "https://trends.google.com/trends/explore?hl=en&cat=405&geo=NZ&date=today%203-m&q=wine",
+      "datetime": "2025-04-17 08:40:33 +00:00",
+      "items_count": 2,
+      "items": [
+        {
+          "position": 1,
+          "type": "google_trends_topics_list",
+          "title": null,
+          "keywords": [
+            "wine"
+          ],
+          "data": {
+            "top": [
+              {
+                "topic_id": "/m/02wsb20",
+                "topic_title": "Red Wine",
+                "topic_type": "Wine",
+                "value": 100
+              },
+              {
+                "topic_id": "/m/020p1v",
+                "topic_title": "Wine bottle",
+                "topic_type": "Topic",
+                "value": 42
+              },
+              {
+                "topic_id": "/m/09v1kqs",
+                "topic_title": "Wine bar",
+                "topic_type": "Topic",
+                "value": 33
+              },
+              {
+                "topic_id": "/g/11h6yr_m14",
+                "topic_title": "Fine Wine Delivery Company",
+                "topic_type": "Topic",
+                "value": 28
+              },
+              {
+                "topic_id": "/m/0fqm_",
+                "topic_title": "Dessert wine",
+                "topic_type": "Wine",
+                "value": 19
+              },
+              {
+                "topic_id": "/g/1thq0x8s",
+                "topic_title": "Marlborough Wine & Food Festival",
+                "topic_type": "Festival in Renwick, New Zealand",
+                "value": 15
+              },
+              {
+                "topic_id": "/m/0h6zk",
+                "topic_title": "Percentage",
+                "topic_type": "Unit of proportion",
+                "value": 5
+              },
+              {
+                "topic_id": "/m/019ctc",
+                "topic_title": "Galleon",
+                "topic_type": "Ship model",
+                "value": 4
+              },
+              {
+                "topic_id": "/g/11l65xqxmq",
+                "topic_title": "Mudbrick Restaurant",
+                "topic_type": "Topic",
+                "value": 4
+              },
+              {
+                "topic_id": "/m/0cpfqq",
+                "topic_title": "Total Wine & More",
+                "topic_type": "Retail company",
+                "value": 4
+              },
+              {
+                "topic_id": "/m/0hr1s_w",
+                "topic_title": "Curry",
+                "topic_type": "Dish",
+                "value": 3
+              },
+              {
+                "topic_id": "/g/11l249l6hs",
+                "topic_title": "The New York Times Connections",
+                "topic_type": "Software",
+                "value": 2
+              }
+            ],
+            "rising": [
+              {
+                "topic_id": "/m/0h6zk",
+                "topic_title": "Percentage",
+                "topic_type": "Unit of proportion",
+                "value": 30900
+              },
+              {
+                "topic_id": "/m/019ctc",
+                "topic_title": "Galleon",
+                "topic_type": "Ship model",
+                "value": 24350
+              },
+              {
+                "topic_id": "/g/11l65xqxmq",
+                "topic_title": "Mudbrick Restaurant",
+                "topic_type": "Topic",
+                "value": 22750
+              },
+              {
+                "topic_id": "/m/0cpfqq",
+                "topic_title": "Total Wine & More",
+                "topic_type": "Retail company",
+                "value": 22500
+              },
+              {
+                "topic_id": "/m/0hr1s_w",
+                "topic_title": "Curry",
+                "topic_type": "Dish",
+                "value": 19600
+              },
+              {
+                "topic_id": "/g/11l249l6hs",
+                "topic_title": "The New York Times Connections",
+                "topic_type": "Software",
+                "value": 12650
+              },
+              {
+                "topic_id": "/g/1thq0x8s",
+                "topic_title": "Marlborough Wine & Food Festival",
+                "topic_type": "Festival in Renwick, New Zealand",
+                "value": 200
+              }
+            ]
+          }
+        },
+        {
+          "position": 2,
+          "type": "google_trends_queries_list",
+          "title": null,
+          "keywords": [
+            "wine"
+          ],
+          "data": {
+            "top": [
+              {
+                "query": "nz wine",
+                "value": 100
+              },
+              {
+                "query": "rose wine",
+                "value": 49
+              },
+              {
+                "query": "new wine",
+                "value": 41
+              },
+              {
+                "query": "wine bottle",
+                "value": 29
+              },
+              {
+                "query": "fine wine",
+                "value": 28
+              },
+              {
+                "query": "marlborough wine",
+                "value": 25
+              },
+              {
+                "query": "sparkling wine",
+                "value": 23
+              },
+              {
+                "query": "wine tasting",
+                "value": 21
+              },
+              {
+                "query": "wine and food",
+                "value": 19
+              },
+              {
+                "query": "chardonnay wine",
+                "value": 17
+              },
+              {
+                "query": "good wine",
+                "value": 17
+              },
+              {
+                "query": "new world wine",
+                "value": 16
+              },
+              {
+                "query": "wine room",
+                "value": 15
+              },
+              {
+                "query": "sweet wine",
+                "value": 15
+              },
+              {
+                "query": "merlot wine",
+                "value": 14
+              },
+              {
+                "query": "hawkes bay wine",
+                "value": 14
+              },
+              {
+                "query": "pinot gris wine",
+                "value": 13
+              },
+              {
+                "query": "french wine region",
+                "value": 5
+              },
+              {
+                "query": "galleon wine",
+                "value": 4
+              },
+              {
+                "query": "french wine regions",
+                "value": 4
+              },
+              {
+                "query": "matua wine",
+                "value": 2
+              },
+              {
+                "query": "salmon and wine festival",
+                "value": 2
+              },
+              {
+                "query": "french wine region nyt",
+                "value": 2
+              },
+              {
+                "query": "pinot meaning",
+                "value": 2
+              },
+              {
+                "query": "feijoa wine recipe",
+                "value": 2
+              }
+            ],
+            "rising": [
+              {
+                "query": "french wine region",
+                "value": 53000
+              },
+              {
+                "query": "galleon wine",
+                "value": 41650
+              },
+              {
+                "query": "french wine regions",
+                "value": 35750
+              },
+              {
+                "query": "matua wine",
+                "value": 22500
+              },
+              {
+                "query": "salmon and wine festival",
+                "value": 21000
+              },
+              {
+                "query": "french wine region nyt",
+                "value": 19750
+              },
+              {
+                "query": "pinot meaning",
+                "value": 18250
+              },
+              {
+                "query": "feijoa wine recipe",
+                "value": 17200
+              },
+              {
+                "query": "haha wine",
+                "value": 17050
+              },
+              {
+                "query": "whiskey and more",
+                "value": 9250
+              },
+              {
+                "query": "fat bastard wine",
+                "value": 8650
+              },
+              {
+                "query": "foley wine club",
+                "value": 8400
+              },
+              {
+                "query": "''",
+                "value": 7450
+              },
+              {
+                "query": "wine and food",
+                "value": 80
+              },
+              {
+                "query": "wine room",
+                "value": 80
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

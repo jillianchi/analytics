@@ -2,19 +2,26 @@
   "name": "vtex-dashboard",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "vercel-build": "echo skipping build"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.0.0",
+    "axios": "^1.8.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
     "lucide-react": "^0.487.0",
     "openai": "^4.92.0",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "recharts": "^2.5.0",
+    "snoowrap": "^1.23.0",
     "vite": "^6.2.5"
   },
   "devDependencies": {

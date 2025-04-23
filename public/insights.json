@@ -1,0 +1,92 @@
+[
+  {
+    "region": "North America",
+    "category": "Fashion",
+    "insight_title": "Rise of sustainable fashion in North America",
+    "insight_summary": "Consumers in North America are increasingly demanding sustainable and eco-friendly fashion options, leading to a rise in brands focusing on sustainability.",
+    "evidence": [
+      {
+        "source": "Forbes",
+        "url": "https://www.forbes.com/",
+        "quote": "Sustainable fashion is no longer a niche market in North America, with consumers showing a strong preference for eco-friendly clothing options."
+      }
+    ],
+    "suggested_action": "Ecommerce retailers in North America should consider incorporating sustainable fashion lines into their offerings to cater to the growing demand.",
+    "fetched_at": "2022-01-31T08:00:00Z"
+  },
+  {
+    "region": "Europe",
+    "category": "Electronics",
+    "insight_title": "Rise of online electronics marketplaces in Europe",
+    "insight_summary": "Online marketplaces specializing in electronics have seen significant growth in Europe, offering consumers a wide range of products and competitive prices.",
+    "evidence": [
+      {
+        "source": "Statista",
+        "url": "https://www.statista.com/",
+        "quote": "The online electronics market in Europe is projected to continue growing, with a focus on providing a diverse selection of products for consumers."
+      }
+    ],
+    "suggested_action": "Ecommerce businesses in Europe should consider partnering with or selling on specialized online electronics marketplaces to reach a broader customer base.",
+    "fetched_at": "2022-01-31T08:00:00Z"
+  },
+  {
+    "region": "Asia",
+    "category": "Beauty",
+    "insight_title": "Increasing popularity of beauty subscription boxes in Asia",
+    "insight_summary": "Beauty subscription boxes have gained traction in Asia, offering consumers personalized and curated beauty products delivered to their doorstep on a regular basis.",
+    "evidence": [
+      {
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/",
+        "quote": "Beauty subscription boxes are a growing trend in Asia, providing consumers with a convenient way to discover new beauty products and brands."
+      }
+    ],
+    "suggested_action": "Ecommerce retailers in Asia should consider launching or partnering with beauty subscription box services to tap into the growing demand for curated beauty experiences.",
+    "fetched_at": "2022-01-31T08:00:00Z"
+  },
+  {
+    "region": "North America",
+    "category": "Fashion",
+    "insight_title": "Rise of Sustainable Fashion in North America",
+    "insight_summary": "Consumers in North America are increasingly turning towards sustainable fashion brands, leading to a shift in the industry.",
+    "evidence": [
+      {
+        "source": "Fashion United",
+        "url": "https://fashionunited.com/news/fashion/the-rise-of-sustainable-fashion-in-north-america/2021092141178",
+        "quote": "According to a recent report by McKinsey, 67% of consumers in North America consider sustainability when making a purchase."
+      }
+    ],
+    "suggested_action": "Ecommerce retailers in North America should consider incorporating sustainable fashion options into their product offerings to cater to the growing demand.",
+    "fetched_at": "2022-01-10T08:00:00Z"
+  },
+  {
+    "region": "Europe",
+    "category": "Electronics",
+    "insight_title": "Surge in Online Electronics Purchases in Europe",
+    "insight_summary": "The electronics category has seen a significant increase in online purchases in Europe, driven by convenience and competitive pricing.",
+    "evidence": [
+      {
+        "source": "Statista",
+        "url": "https://www.statista.com/study/e-commerce-in-electronics-retail-in-europe-2021/",
+        "quote": "E-commerce sales of electronics in Europe are projected to reach 93 billion euros in 2021."
+      }
+    ],
+    "suggested_action": "European ecommerce businesses should focus on optimizing their online platforms for electronics sales to capitalize on this growing trend.",
+    "fetched_at": "2022-01-10T08:00:00Z"
+  },
+  {
+    "region": "Asia",
+    "category": "Beauty",
+    "insight_title": "Beauty Influencer Marketing Dominating Asia's Ecommerce Scene",
+    "insight_summary": "In Asia, beauty brands are leveraging influencer marketing on ecommerce platforms to reach a wider audience and drive sales.",
+    "evidence": [
+      {
+        "source": "Business of Fashion",
+        "url": "https://www.businessoffashion.com/articles/professional/why-chinas-influencer-economy-is-different",
+        "quote": "In China, influencer marketing accounts for 20 percent of the country’s total media spend, with the beauty industry being a key player."
+      }
+    ],
+    "suggested_action": "Beauty ecommerce retailers in Asia should collaborate with influencers to promote their products and engage with customers effectively.",
+    "fetched_at": "2022-01-10T08:00:00Z"
+  }
+]

@@ -5,12 +5,15 @@ import TopProductsChart from "./components/TopProductsChart";
 import KPICards from "./components/KPICards";
 import AIHighlights from "./components/AIHighlights";
 import SmartQA from "./components/SmartQA";
+import TrendsDashboard from "./components/Trends";
+import TrendsRaw from "./components/TrendsRaw";
 import {
   BarChart3,
   FileText,
   LayoutDashboard,
   MessageSquare,
   CheckCircle,
+  TrendingUp,
 } from "lucide-react";
 
 function DataBanner({
@@ -158,7 +161,31 @@ export default function App() {
               Upload
             </span>
           </button>
+
+          <button
+            className={`flex items-center w-full text-left p-2 rounded-lg hover:bg-gray-100 transition ${
+              activeTab === "trends" ? "bg-gray-200 font-semibold" : ""
+            }`}
+            onClick={() => setActiveTab("trends")}
+          >
+            <TrendingUp className="w-5 h-5 mr-2 shrink-0" />
+            <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition duration-300">
+              Trends
+            </span>
+          </button>
         </nav>
+
+        <button
+          className={`flex items-center w-full text-left p-2 rounded-lg hover:bg-gray-100 transition ${
+            activeTab === "trendsRaw" ? "bg-gray-200 font-semibold" : ""
+          }`}
+          onClick={() => setActiveTab("trendsRaw")}
+        >
+          <TrendingUp className="w-5 h-5 mr-2 shrink-0" />
+          <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition duration-300">
+            Raw Trends
+          </span>
+        </button>
       </aside>
 
       {/* Right side layout container */}
@@ -232,6 +259,17 @@ export default function App() {
             <div className="text-gray-500 text-sm italic">
               Upload files using the top banner ⬆️
             </div>
+          )}
+
+          {activeTab === "trends" && (
+            <section className="bg-white rounded-2xl shadow-md p-6">
+              <TrendsDashboard />
+            </section>
+          )}
+          {activeTab === "trendsRaw" && (
+            <section className="bg-white rounded-2xl shadow-md p-6">
+              <TrendsRaw />
+            </section>
           )}
         </main>
       </div>
