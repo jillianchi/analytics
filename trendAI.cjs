@@ -1,7 +1,8 @@
 // TrendAI.cjs
 const fs = require("fs");
 const path = require("path");
-const { Configuration, OpenAIApi } = require("openai");
+import { OPENAI_API_KEY, OPENAI_MODEL } from "../config.js";
+import { Configuration, OpenAIApi } from "openai";
 require("dotenv").config();
 
 const ARCHIVE_DIR = "./public/data/archive/google_trends";
@@ -9,7 +10,7 @@ const INSIGHTS_DIR = "./public/data/ai_insights";
 fs.mkdirSync(INSIGHTS_DIR, { recursive: true });
 
 const config = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(config);
 
@@ -70,7 +71,7 @@ async function generateInsightFromFile(filePath) {
 
   try {
     const completion = await openai.createChatCompletion({
-      model: process.env.OPENAI_MODEL || "gpt-3.5-turbo",
+      model: OPENAI_MODEL || "gpt-3.5-turbo",
       messages: [
         { role: "system", content: "You are an e-commerce insight generator." },
         { role: "user", content: prompt },

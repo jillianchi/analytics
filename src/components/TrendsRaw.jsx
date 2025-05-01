@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FolderSearch } from "lucide-react";
 import TrendInsight from "./TrendInsight";
+import PersonaManager from "./PersonaManager";
 
 const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:3001";
+
+const normalizeKeyword = (k) => k.toLowerCase().trim();
 
 const REGION_OPTIONS = [
   { label: "New Zealand", code: 2554 },
@@ -29,6 +32,22 @@ export default function TrendsRaw() {
   const [timeRange, setTimeRange] = useState("past_90_days");
   const [pagination, setPagination] = useState({});
   const [insightResults, setInsightResults] = useState({});
+  const [personas, setPersonas] = useState(() => {
+    const saved = localStorage.getItem("ai_personas");
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [activePersona, setActivePersona] = useState(() => {
+    const saved = localStorage.getItem("ai_active_persona");
+    return saved ? JSON.parse(saved) : null;
+  });
+
+  const handleSavePersona = (updatedList) => {
+    setPersonas(updatedList);
+    const latest = updatedList[updatedList.length - 1];
+    setActivePersona(latest);
+    localStorage.setItem("ai_personas", JSON.stringify(updatedList));
+    localStorage.setItem("ai_active_persona", JSON.stringify(latest));
+  };
 
   useEffect(() => {
     fetch("/data/archive/google_trends/raw_trends_2025-04-17_NZ_wine.json")
@@ -57,7 +76,7 @@ export default function TrendsRaw() {
     setMultiTrendData([]);
 
     try {
-      const res = await fetch("http://localhost:3001/api/fetch-multi-trend", {
+      const res = await fetch(`${API_BASE}/api/trends/live`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -78,12 +97,14 @@ export default function TrendsRaw() {
           body: JSON.stringify({
             keyword: results[0].keyword,
             items: results[0].items,
+            persona: activePersona,
           }),
         });
         const aiJson = await aiRes.json();
+        const key = normalizeKeyword(results[0].keyword);
         setInsightResults((prev) => ({
           ...prev,
-          [results[0].keyword]: aiJson,
+          [key]: aiJson,
         }));
       }
     } catch (err) {
@@ -176,6 +197,13 @@ export default function TrendsRaw() {
 
   return (
     <div className="p-10 space-y-8">
+      <PersonaManager
+        personas={personas}
+        onSave={handleSavePersona}
+        activePersona={activePersona}
+        setActivePersona={setActivePersona}
+      />
+
       <h2 className="text-2xl font-bold text-gray-700">
         📊 Raw Trend Explorer
       </h2>
@@ -224,65 +252,56 @@ export default function TrendsRaw() {
 
       {loading ? (
         <div className="text-gray-500 text-sm p-10 flex flex-col items-center gap-3">
-          <svg
-            className="animate-spin h-6 w-6 text-blue-600"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            />
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-            />
-          </svg>
+          <FolderSearch className="w-6 h-6 animate-spin" />
           <p className="font-medium">Fetching latest Google Trends…</p>
           <p className="text-xs text-gray-400">This may take 5–10 seconds</p>
         </div>
       ) : multiTrendData.length > 0 ? (
-        multiTrendData.map((entry, i) => (
-          <div key={i} className="space-y-4 mt-8">
-            <p className="text-sm text-gray-500 mb-2">
-              Showing trend data for:{" "}
-              <span className="font-semibold text-gray-700">
-                {entry.keyword}
-              </span>
-            </p>
-            <TrendInsight keyword={entry.keyword} items={entry.items} />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {renderTrendBlock(
-                "Top Queries",
-                entry.items.find((i) => i.type === "google_trends_queries_list")
-                  ?.data?.top
-              )}
-              {renderTrendBlock(
-                "Rising Queries",
-                entry.items.find((i) => i.type === "google_trends_queries_list")
-                  ?.data?.rising,
-                true
-              )}
-              {renderTrendBlock(
-                "Top Topics",
-                entry.items.find((i) => i.type === "google_trends_topics_list")
-                  ?.data?.top
-              )}
-              {renderTrendBlock(
-                "Rising Topics",
-                entry.items.find((i) => i.type === "google_trends_topics_list")
-                  ?.data?.rising,
-                true
-              )}
+        multiTrendData.map((entry, i) => {
+          const key = normalizeKeyword(entry.keyword); // 👈 add this line here
+          return (
+            <div key={i} className="space-y-4 mt-8">
+              <p className="text-sm text-gray-500 mb-2">
+                Showing trend data for:{" "}
+                <span className="font-semibold text-gray-700">
+                  {entry.keyword}
+                </span>
+              </p>
+              <TrendInsight
+                keyword={entry.keyword}
+                insight={insightResults[key]?.insight} // 👈 use the normalized key
+              />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {renderTrendBlock(
+                  "Top Queries",
+                  entry.items.find(
+                    (i) => i.type === "google_trends_queries_list"
+                  )?.data?.top
+                )}
+                {renderTrendBlock(
+                  "Rising Queries",
+                  entry.items.find(
+                    (i) => i.type === "google_trends_queries_list"
+                  )?.data?.rising,
+                  true
+                )}
+                {renderTrendBlock(
+                  "Top Topics",
+                  entry.items.find(
+                    (i) => i.type === "google_trends_topics_list"
+                  )?.data?.top
+                )}
+                {renderTrendBlock(
+                  "Rising Topics",
+                  entry.items.find(
+                    (i) => i.type === "google_trends_topics_list"
+                  )?.data?.rising,
+                  true
+                )}
+              </div>
             </div>
-          </div>
-        ))
+          );
+        })
       ) : (
         <>
           <p className="text-sm text-gray-500 mb-2">
