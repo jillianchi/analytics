@@ -221,5 +221,19 @@
       "Collaborate with influencers known for their culinary creativity to create buzz around PopBurst's pastry offerings and drive engagement among Millennials and Gen Z."
     ],
     "submitted_at": "2025-05-01T02:09:39.775Z"
+  },
+  {
+    "keyword": "butter",
+    "rating": "thumbs_down",
+    "prompt_system": "You generate strategic insights for e-commerce teams based on persona and organization context.\n\n🔑 Always tailor insights and action steps based on:\n1. The user's role, tone, and goals\n2. The brand’s values, audience, and business priorities\n\n👤 Persona:\n- Name: operator\n- Role: cost saving strategies\n- Goals: increase conversion\n- Influence: pricing\n- Tone: strategic\n\n🏢 Organization:\n- Name: PopBurst Snacks\n- Description: PopBurst is a premium snack company known for its innovative popcorn flavors and immersive snacking experiences.\n- Values: Flavor innovation, Playful packaging, High-quality ingredients, Global snacking culture\n- Audience: Millennials and Gen Z, Moviegoers, Gourmet snack enthusiasts, Parents looking for healthy snacks for kids\n- Goals: Expand into Southeast Asia, Increase D2C sales via eCommerce, Grow brand awareness through influencer partnerships, Launch limited-edition popcorn bundles\n",
+    "prompt_user": "You are a senior growth strategist.\n\nUsing the data below, analyze the rising Google Trends for the keyword **\"butter\"**.\n\nYour task:\n1. Identify 1–2 **key emerging themes**\n2. Provide **one strategic insight** by connecting patterns between queries and topics\n3. List **3 actionable recommendations** tailored to the persona and organization context\n\n---\n\n📈 Rising Queries:\n- \"romaine\" (+11900)\n- \"snow lettuce\" (+10850)\n- \"bane\" (+10150)\n- \"how many grams is 1/2 cup of butter\" (+8600)\n- \"pistachio cream\" (+7400)\n\n📊 Rising Topics:\n- \"Hot cross bun\" (+45450)\n- \"Butter lettuce\" (+29300)\n- \"Lettuce\" (+300)\n- \"PicsPeanutButter\" (+170)\n- \"Crumble\" (+140)\n\n---\n\nRespond strictly in this JSON format:\n\n{\n  \"keyword\": \"butter\",\n  \"insight_title\": \"Your insight title here\",\n  \"summary\": \"Short paragraph summary of the trend insight.\",\n  \"suggested_actions\": [\n    \"First action point — clear and persona-aligned.\",\n    \"Second action point — strategic or tactical step.\",\n    \"Third action point — if applicable.\"\n  ]\n}\n\nDo not include explanations outside of this JSON object.",
+    "insight_title": "The Rise of Butter Lettuce and its Culinary Pairings",
+    "summary": "The increasing interest in 'butter lettuce' alongside related queries like 'romaine' and 'snow lettuce' suggests a trend towards healthier, gourmet salads and culinary experiences. The mention of 'pistachio cream' hints at a potential fusion trend in gourmet spreads or desserts, aligning with the premium snacking ethos of PopBurst Snacks.",
+    "suggested_actions": [
+      "Explore incorporating 'butter lettuce' or gourmet salad flavors into new popcorn offerings to tap into the trend towards healthy and gourmet snacking.",
+      "Consider developing a limited-edition popcorn bundle featuring a fusion flavor like 'Pistachio Cream & Butter Lettuce' to cater to the emerging interest in gourmet spreads and desserts.",
+      "Collaborate with influencers known for their culinary content to create engaging snack pairing recipes using PopBurst popcorn and 'butter lettuce' as a way to leverage this trend for increased brand awareness and conversion."
+    ],
+    "submitted_at": "2025-05-01T02:13:17.609Z"
   }
 ]
