@@ -86,6 +86,8 @@ export default function TrendsRaw() {
         }),
       });
 
+      if (!res.ok) throw new Error(`API error ${res.status}`);
+
       const json = await res.json();
       const results = json.results || [];
       setMultiTrendData(results);
@@ -100,19 +102,24 @@ export default function TrendsRaw() {
             persona: activePersona,
           }),
         });
-        const aiJson = await aiRes.json();
-        const key = normalizeKeyword(results[0].keyword);
-        setInsightResults((prev) => ({
-          ...prev,
-          [key]: aiJson,
-        }));
+
+        if (aiRes.ok) {
+          const aiJson = await aiRes.json();
+          const key = normalizeKeyword(results[0].keyword);
+          setInsightResults((prev) => ({ ...prev, [key]: aiJson }));
+        } else {
+          console.warn("AI fetch failed", aiRes.status);
+        }
       }
     } catch (err) {
-      console.error("Failed to fetch multi-trends", err);
+      console.error("❌ Failed to fetch multi-trends:", err);
+      setMultiTrendData([]);
     } finally {
       setLoading(false);
     }
   };
+}
+
 
   const renderTrendBlock = (title, data = [], isRising = false) => {
     const pageKey = title;
