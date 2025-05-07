@@ -265,6 +265,13 @@ export default function TrendsRaw() {
       ) : Array.isArray(multiTrendData) && multiTrendData.length > 0 ? (
         multiTrendData.map((entry, i) => {
           const key = normalizeKeyword(entry.keyword);
+          if (!entry.items) {
+            return (
+              <div key={i} className="text-red-500 text-sm">
+                ⚠️ No trend data found for: {entry.keyword}
+              </div>
+            );
+          }
           return (
             <div key={i} className="space-y-4 mt-8">
               <p className="text-sm text-gray-500 mb-2">
@@ -280,26 +287,26 @@ export default function TrendsRaw() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {renderTrendBlock(
                   "Top Queries",
-                  entry.items.find(
+                  entry.items?.find(
                     (i) => i.type === "google_trends_queries_list"
                   )?.data?.top
                 )}
                 {renderTrendBlock(
                   "Rising Queries",
-                  entry.items.find(
+                  entry.items?.find(
                     (i) => i.type === "google_trends_queries_list"
                   )?.data?.rising,
                   true
                 )}
                 {renderTrendBlock(
                   "Top Topics",
-                  entry.items.find(
+                  entry.items?.find(
                     (i) => i.type === "google_trends_topics_list"
                   )?.data?.top
                 )}
                 {renderTrendBlock(
                   "Rising Topics",
-                  entry.items.find(
+                  entry.items?.find(
                     (i) => i.type === "google_trends_topics_list"
                   )?.data?.rising,
                   true
