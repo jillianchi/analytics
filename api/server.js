@@ -4,9 +4,9 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import trendsRoutes from "./routes/trends.js";
-import analyzeRoute from "./routes/analyze.js";
-import feedbackRoute from "./routes/feedback.js";
+import trendsRoutes from "../routes/trends.js";
+import analyzeRoute from "../routes/analyze.js";
+import feedbackRoute from "../routes/feedback.js";
 
 dotenv.config();
 
@@ -19,6 +19,4 @@ app.use("/api/analyze-trends", analyzeRoute);
 app.use("/api/insight-feedback", feedbackRoute);
 
 const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
-});
+export default app;
