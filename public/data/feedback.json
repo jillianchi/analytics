@@ -235,5 +235,19 @@
       "Collaborate with influencers known for their culinary content to create engaging snack pairing recipes using PopBurst popcorn and 'butter lettuce' as a way to leverage this trend for increased brand awareness and conversion."
     ],
     "submitted_at": "2025-05-01T02:13:17.609Z"
+  },
+  {
+    "keyword": "popcorn",
+    "rating": "thumbs_down",
+    "prompt_system": "You generate strategic insights for e-commerce teams based on persona and organization context.\n\n🔑 Always tailor insights and action steps based on:\n1. The user's role, tone, and goals\n2. The brand’s values, audience, and business priorities\n\n👤 Persona:\n- Name: Digital Marketer\n- Role: Plans and runs online marketing campaigns, Manages digital channels (ads, email, social, SEO)\n- Goals: Drive qualified traffic, Increase conversions and sales, Maximize ROAS and lower CPA, Boost brand visibility, Retain and engage customers\n- Influence: Campaign strategy and budget, Ad platforms (Google, Meta, etc.), Website traffic and lead generation, Marketing tools and automation, Target audience and segmentation, Performance metrics (CTR, ROAS, CAC)\n- Tone: neutral\n\n🏢 Organization:\n- Name: PopBurst Snacks\n- Description: PopBurst is a premium snack company known for its innovative popcorn flavors and immersive snacking experiences.\n- Values: Flavor innovation, Playful packaging, High-quality ingredients, Global snacking culture\n- Audience: Millennials and Gen Z, Moviegoers, Gourmet snack enthusiasts, Parents looking for healthy snacks for kids\n- Goals: Expand into Southeast Asia, Increase D2C sales via eCommerce, Grow brand awareness through influencer partnerships, Launch limited-edition popcorn bundles\n",
+    "prompt_user": "You are a senior growth strategist.\n\nUsing the data below, analyze the rising Google Trends for the keyword **\"popcorn\"**.\n\nYour task:\n1. Identify 1–2 **key emerging themes**\n2. Provide **one strategic insight** by connecting patterns between queries and topics\n3. List **3 actionable recommendations** tailored to the persona and organization context\n\n---\n\n📈 Rising Queries:\n- \"minecraft movie popcorn\" (+141050)\n- \"minecraft popcorn bucket\" (+105850)\n- \"protein popcorn\" (+56400)\n- \"symptoms of popcorn lung\" (+51700)\n- \"pass the popcorn\" (+42650)\n\n📊 Rising Topics:\n- \"A Minecraft Movie\" (+109000)\n- \"Pams\" (+54900)\n- \"Doodle Champion Island Games\" (+41250)\n- \"Tofu\" (+30950)\n- \"Cooktop\" (+30600)\n\n---\n\nRespond strictly in this JSON format:\n\n{\n  \"keyword\": \"popcorn\",\n  \"insight_title\": \"Your insight title here\",\n  \"summary\": \"Short paragraph summary of the trend insight.\",\n  \"suggested_actions\": [\n    \"First action point — clear and persona-aligned.\",\n    \"Second action point — strategic or tactical step.\",\n    \"Third action point — if applicable.\"\n  ]\n}\n\nDo not include explanations outside of this JSON object.",
+    "insight_title": "Capturing Audience Interest through Cross-Promotional Partnerships",
+    "summary": "The rising queries related to 'Minecraft movie popcorn' and 'Minecraft popcorn bucket' alongside the topic 'A Minecraft Movie' suggest a strong interest in movie-themed popcorn products among consumers. Leveraging partnerships with popular entertainment franchises can help PopBurst Snacks tap into this trend and captivate a wider audience.",
+    "suggested_actions": [
+      "Utilize influencer collaborations or sponsored content with Minecraft or similar movie franchises to promote exclusive themed popcorn bundles.",
+      "Create limited-edition popcorn flavors inspired by popular movies or games to cater to the entertainment-savvy consumer segment.",
+      "Launch targeted digital marketing campaigns on platforms frequented by gaming and movie enthusiasts to promote the unique movie-themed popcorn offerings."
+    ],
+    "submitted_at": "2025-05-07T13:06:32.867Z"
   }
 ]
