@@ -89,7 +89,7 @@ export default function TrendsRaw() {
       if (!res.ok) throw new Error(`API error ${res.status}`);
 
       const json = await res.json();
-      const results = json.results || [];
+      const results = (json.results || []).filter((r) => r.keyword && r.items);
       setMultiTrendData(results);
 
       if (results.length > 0 && results[0].items) {
@@ -264,7 +264,10 @@ export default function TrendsRaw() {
         </div>
       ) : Array.isArray(multiTrendData) && multiTrendData.length > 0 ? (
         multiTrendData.map((entry, i) => {
-          const key = normalizeKeyword(entry.keyword);
+          const key =
+            typeof entry.keyword === "string"
+              ? normalizeKeyword(entry.keyword)
+              : `unknown-${i}`;
           if (!entry.items) {
             return (
               <div key={i} className="text-red-500 text-sm">
